@@ -1,0 +1,9 @@
+venv/
+.env
+__pycache__/
+data/users/
+data/chroma_db/
+data/users.json
+data/eval_temp_text_embedding_3_large/
+data/eval_temp_text_embedding_3_small/
+data/uploaded_documents/
