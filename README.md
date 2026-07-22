@@ -1,4 +1,4 @@
-# Enterprise AI Document Assistant
+# Enterprise AI Document Assistant (RAG-Based Document Question Answering System)
 
 An AI-powered document assistant that lets users upload PDF and Word files, search them semantically, and ask questions in natural language. The system uses a Retrieval-Augmented Generation (RAG) workflow to ground answers in the user's own documents rather than relying on general knowledge alone.
 
@@ -8,6 +8,10 @@ This project demonstrates practical experience with:
 - Document processing and chunking
 - Building a full end-to-end AI application with a user interface
 - Real-world AI workflow design for enterprise-style document search
+
+## Live Demo
+
+Coming Soon (Hugging Face Spaces)
 
 ## Screenshots
 
@@ -26,7 +30,7 @@ The Enterprise AI Document Assistant provides a secure, user-friendly interface 
 - Get grounded answers with source-based context
 - Generate summaries, key points, FAQs, and action items from documents
 
-This makes the application useful for scenarios such as:
+Potential use cases include:
 - Internal company knowledge bases
 - Policy and compliance documents
 - Research papers and technical reports
@@ -51,12 +55,26 @@ This makes the application useful for scenarios such as:
 
 - Python
 - Streamlit for the web interface
-- LangChain for orchestration
+- LangChain for Retrieval-Augmented Generation (RAG) orchestration
 - Chroma for vector storage
 - Hugging Face (BAAI/bge-small-en-v1.5) for free, local embeddings
-- OpenAI GPT models for answer generation
+- Language Model: OpenAI GPT (current implementation), with support planned for open-source models
 - PyPDF and python-docx for document parsing
 - bcrypt for password hashing
+
+## Skills Demonstrated
+
+- Retrieval-Augmented Generation (RAG)
+- Large Language Models (LLMs)
+- Semantic Search
+- Vector Databases
+- Prompt Engineering
+- LangChain
+- ChromaDB
+- Hugging Face Embeddings
+- Streamlit
+- Python
+- Authentication and User Management
 
 ## How It Works
 
@@ -66,6 +84,34 @@ This makes the application useful for scenarios such as:
 4. Each chunk is converted into embeddings and stored in a vector database scoped to that user.
 5. When the user asks a question, the system retrieves the most relevant chunks using MMR-based semantic search.
 6. The LLM uses those retrieved chunks — plus recent conversation history — to generate a grounded, source-cited answer.
+
+```text
+User
+   │
+   ▼
+Upload PDF/DOCX
+   │
+   ▼
+Document Loader
+   │
+   ▼
+Text Splitter
+   │
+   ▼
+Embeddings (BAAI/bge-small-en-v1.5)
+   │
+   ▼
+ChromaDB
+   │
+   ▼
+Retriever (MMR)
+   │
+   ▼
+OpenAI GPT
+   │
+   ▼
+Answer + Source Citation
+```
 
 This is a classic RAG (Retrieval-Augmented Generation) architecture, which is highly relevant in modern AI application development.
 
@@ -207,4 +253,6 @@ Possible improvements for the next version include:
 
 ## License
 
-This project is for educational and portfolio purposes.
+## License
+
+This project was developed for educational purposes and to demonstrate practical AI engineering skills as part of my professional portfolio.
